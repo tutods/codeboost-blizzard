@@ -1,0 +1,21 @@
+{
+	"tabWidth": 4,
+	"useTabs": true,
+	"singleQuote": true,
+	"printWidth": 100,
+	"semi": true,
+	"trailingComma": "none",
+	"overrides": [
+		{
+			"files": [
+				"*.yml",
+				"*.yaml",
+				"*.sass"
+			],
+			"options": {
+				"tabWidth": 2,
+				"useTabs": false
+			}
+		}
+	]
+}

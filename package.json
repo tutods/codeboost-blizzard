@@ -1,0 +1,32 @@
+{
+	"name": "gulp-template",
+	"description": "Gulp template created following Codeboost course.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"author": {
+		"name": "Daniel Sousa",
+		"url": "https://github.com/tutods"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "gulp",
+		"build:sass": "gulp sass",
+		"build:js": "gulp js"
+	},
+	"dependencies": {
+		"sass": "^1.54.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.9",
+		"@babel/preset-env": "^7.18.9",
+		"browser-sync": "^2.27.10",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-sass": "^5.1.0",
+		"gulp-uglify": "^3.0.2",
+		"prettier": "^2.7.1"
+	}
+}

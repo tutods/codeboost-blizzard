@@ -1,0 +1,7 @@
+package.json
+dist/
+build/
+*.sass
+node_modules/
+yarn.lock
+pnpm-lock.yaml
