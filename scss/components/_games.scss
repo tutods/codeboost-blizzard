@@ -6,6 +6,7 @@
 		@include flexAlignment(flex-end, space-between);
 		gap: 9.9375rem;
 
+		margin-bottom: 5.3125rem;
 
 		div:nth-of-type(1) {
 			@include flex();
@@ -59,6 +60,49 @@
 				color: $primary;
 			}
 		}
+	}
 
+	.tabs {
+		.tab {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 2rem;
+
+			&:not(.active) {
+				display: none;
+			}
+		}
+	}
+
+	.all-games {
+		width: 100%;
+		max-width: 17.5rem;
+		height: 25rem;
+
+		@include flex(column);
+		@include flexAlignment(center, center);
+		gap: 2.1875rem;
+
+		border: .0625rem solid #212428;
+		border-radius: .25rem;
+
+		transition: border-color .3s ease-in, color .3s ease-in;
+
+		span {
+			@include flex();
+			@include flexAlignment(center);
+			gap: .625rem;
+
+			font-size: 1rem;
+			line-height: 1.5rem;
+		}
+
+		&:hover {
+			border-color: $primary;
+
+			span {
+				color: $primary;
+			}
+		}
 	}
 }
