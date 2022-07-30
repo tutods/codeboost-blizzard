@@ -15,7 +15,12 @@ browserSync.create();
 const buildStyles = () => {
 	return gulp
 		.src('./scss/**/*.scss')
-		.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+		.pipe(
+			sass({
+				outputStyle: 'compressed',
+				includePaths: ['./node_modules/phosphor-icons/src/css']
+			}).on('error', sass.logError)
+		)
 		.pipe(
 			gulpAutoprefixer({
 				overrideBrowserslist: ['last 2 versions'],
@@ -52,7 +57,7 @@ const buildJS = () => {
 
 const buildPackagesJS = () => {
 	return gulp
-		.src(['./js/libs/*.min.js'], { allowEmpty: true }) // Set which files you want build
+		.src(['./node_modules/swiper/swiper-bundle.min.js'], { allowEmpty: true }) // Set which files you want build
 		.pipe(gulpConcat('packages.min.js'))
 		.pipe(
 			gulpBabel({
@@ -66,7 +71,9 @@ const buildPackagesJS = () => {
 
 const buildPackagesStyles = () => {
 	return gulp
-		.src(['./css/libs/phosphor-icons.css'], { allowEmpty: true }) // Set which files you want build
+		.src(['./css/libs/*.css', './node_modules/swiper/swiper-bundle.min.css'], {
+			allowEmpty: true
+		}) // Set which files you want build
 		.pipe(gulpConcat('packages.min.css'))
 		.pipe(gulp.dest('./css/'))
 		.pipe(browserSync.stream());

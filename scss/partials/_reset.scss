@@ -12,7 +12,9 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 
-	font-family: 'Poppins', sans-serif;
+	&:not(i) {
+		font-family: 'Poppins', sans-serif;
+	}
 }
 
 ul,
@@ -32,5 +34,9 @@ img {
 }
 
 button {
+	border: none;
+	background-color: transparent;
+	box-shadow: none;
+
 	cursor: pointer;
 }
