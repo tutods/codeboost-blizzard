@@ -1,3 +1,45 @@
+const thumbnailSlider = new Swiper('.thumbnail-slider', {
+	slidesPerView: 5,
+	direction: 'vertical',
+	spaceBetween: 20
+});
+
 const heroSlider = new Swiper('.slider', {
-	effect: 'fade'
+	effect: 'fade',
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+		verticalClass: 'swiper-pagination-vertical',
+		renderBullet: function (index, className) {
+			const slideImage = [
+				{
+					path: '/img/games/slider/icons/logo-xs-diablo-iv.png',
+					alt: 'Diablo IV'
+				},
+				{
+					path: '/img/games/slider/icons/logo-xs-heartstone.png',
+					alt: 'Heartstone'
+				},
+				{
+					path: '/img/games/slider/icons/logo-xs-ww.png',
+					alt: 'World of Warcraft'
+				},
+				{
+					path: '/img/games/slider/icons/logo-xs-diablo-imortal.png',
+					alt: 'Diablo Imortal'
+				},
+				{
+					path: '/img/games/slider/icons/logo-starcraft-ii.png',
+					alt: 'Starcraft II'
+				}
+			];
+
+			return `<span class="${className}">
+				<img
+					src="${slideImage[index].path}"
+					alt="${slideImage[index].alt}"
+				/>
+			</span>`;
+		}
+	}
 });
