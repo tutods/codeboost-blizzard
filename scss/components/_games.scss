@@ -1,0 +1,64 @@
+.games {
+	@include py(5.3125rem);
+
+	.top-content {
+		@include flex();
+		@include flexAlignment(flex-end, space-between);
+		gap: 9.9375rem;
+
+
+		div:nth-of-type(1) {
+			@include flex();
+			@include flexAlignment(flex-start, space-between);
+
+			max-width: 24.375rem;
+			width: 100%;
+
+			h2 {
+				width: 100%;
+				max-width: 10.9375rem;
+
+				font-weight: 700;
+				font-size: 2rem;
+				line-height: 110.2%;
+			}
+
+			span {
+				margin-top: .6875rem;
+
+				font-size: .9375rem;
+				font-weight: 600;
+				text-transform: uppercase;
+
+				color: $neutral800;
+			}
+		}
+
+		div:nth-of-type(2) {
+			flex: 1 1 auto;
+			@include flex();
+			@include flexAlignment(flex-end, space-between);
+
+			ul {
+				@include flex();
+				@include flexAlignment(center);
+				gap: 1.5rem;
+
+				li {
+					margin-left: 0;
+				}
+			}
+
+			.filter-btn {
+				@include flex();
+				@include flexAlignment(center);
+				gap: .625rem;
+
+				font-size: 1rem;
+				line-height: 1.5rem;
+				color: $primary;
+			}
+		}
+
+	}
+}

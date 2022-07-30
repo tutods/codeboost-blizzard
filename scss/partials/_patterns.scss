@@ -1,6 +1,6 @@
 .btn {
 	display: inline-flex;
-	align-items: center;
+	@include flexAlignment(center);
 	gap: .5rem;
 
 	@include px(1rem);

@@ -12,15 +12,14 @@
 
 			max-height: 20rem;
 
-			@include displayFlex(column);
-			align-items: center;
+			@include flex(column);
+			@include flexAlignment(center);
 			gap: 1.25rem;
 
 			z-index: 2;
 
 			&-bullet {
-				width: 3rem;
-				height: 3rem !important;
+				@include size(3rem);
 
 				background-color: transparent;
 
@@ -79,9 +78,8 @@
 				}
 
 				.container {
-					@include displayFlex();
-					align-items: flex-start;
-					justify-content: space-between;
+					@include flex();
+					@include flexAlignment(flex-start, space-between);
 
 					gap: 10.375rem;
 
@@ -116,13 +114,14 @@
 					.video-content {
 						flex: 0 1 17.5rem;
 
-						@include displayFlex(column);
-						align-items: flex-end;
+						@include flex(column);
 						justify-content: space-between;
 
-						height: 29.6875rem;
+						// height: 29.6875rem;
 
 						margin-top: -2.125rem;
+
+						text-align: right;
 
 						.logo {
 							width: 17.5rem;
@@ -136,8 +135,8 @@
 						}
 
 						.video {
-							@include displayFlex(column);
-							align-items: flex-end;
+							@include flex(column);
+							@include flexAlignment(flex-end);
 							gap: 1rem;
 
 							margin-top: 7rem;
@@ -158,9 +157,8 @@
 								width: 17.5rem;
 								height: 10.8125rem;
 
-								@include displayFlex();
-								align-items: center;
-								justify-content: center;
+								@include flex();
+								@include flexAlignment(center, center);
 
 								border-radius: .25rem;
 

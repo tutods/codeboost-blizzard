@@ -3,9 +3,21 @@
 	height: $size;
 }
 
-@mixin displayFlex($dir:row) {
+@mixin flex($dir:row, $wrap: no-wrap) {
 	display: flex;
-	flex-direction: $dir;
+
+	@if $dir !=row {
+		flex-direction: $dir;
+	}
+
+	@if $wrap !=no-wrap {
+		flex-wrap: $wrap;
+	}
+}
+
+@mixin flexAlignment($align:flex-start, $justify:flex-start) {
+	align-items: $align;
+	justify-content: $justify;
 }
 
 @mixin mx($margin) {
