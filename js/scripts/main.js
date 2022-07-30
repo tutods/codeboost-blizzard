@@ -43,3 +43,19 @@ const heroSlider = new Swiper('.slider', {
 		}
 	}
 });
+
+const allFilters = document.querySelectorAll('.nav-filter li a');
+const tabs = document.querySelectorAll('.tab');
+
+allFilters.forEach((filter, index) => {
+	filter.addEventListener('click', (evt) => {
+		evt.preventDefault();
+
+		allFilters.forEach((item) => item.classList.remove('active'));
+
+		tabs.forEach((tab) => tab.classList.remove('active'));
+
+		tabs[index].classList.add('active');
+		filter.classList.add('active');
+	});
+});

@@ -47,6 +47,20 @@
 
 				li {
 					margin-left: 0;
+
+					a {
+						img {
+							opacity: 0.5;
+
+							transition: opacity .3s ease;
+						}
+
+						&.active {
+							img {
+								opacity: 1
+							}
+						}
+					}
 				}
 			}
 
@@ -67,6 +81,8 @@
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 2rem;
+
+			animation: fadeUp .4s forwards;
 
 			&:not(.active) {
 				display: none;
@@ -104,5 +120,17 @@
 				color: $primary;
 			}
 		}
+	}
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(2.5rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
