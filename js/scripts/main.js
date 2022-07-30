@@ -1,6 +1,11 @@
 const heroSlider = new Swiper('.slider', {
 	effect: 'fade',
 	loop: true,
+	autoplay: {
+		delay: 4000,
+		disableOnInteraction: false,
+		pauseOnMouseEnter: true
+	},
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
