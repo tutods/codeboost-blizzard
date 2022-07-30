@@ -1,11 +1,6 @@
-const thumbnailSlider = new Swiper('.thumbnail-slider', {
-	slidesPerView: 5,
-	direction: 'vertical',
-	spaceBetween: 20
-});
-
 const heroSlider = new Swiper('.slider', {
 	effect: 'fade',
+	loop: true,
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
