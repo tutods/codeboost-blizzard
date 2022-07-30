@@ -52,7 +52,7 @@ const buildJS = () => {
 
 const buildPackagesJS = () => {
 	return gulp
-		.src(['./js/libs/swiper.min.js', './js/libs/aos.min.js'], { allowEmpty: true })
+		.src(['./js/libs/*.min.js'], { allowEmpty: true }) // Set which files you want build
 		.pipe(gulpConcat('packages.min.js'))
 		.pipe(
 			gulpBabel({
@@ -66,7 +66,7 @@ const buildPackagesJS = () => {
 
 const buildPackagesStyles = () => {
 	return gulp
-		.src(['./css/libs/swiper.min.css', './css/libs/aos.min.css'], { allowEmpty: true })
+		.src(['./css/libs/phosphor-icons.css'], { allowEmpty: true }) // Set which files you want build
 		.pipe(gulpConcat('packages.min.css'))
 		.pipe(gulp.dest('./css/'))
 		.pipe(browserSync.stream());

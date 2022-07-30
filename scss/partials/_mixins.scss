@@ -1,0 +1,29 @@
+@mixin size($size) {
+	width: $size;
+	height: $size;
+}
+
+@mixin displayFlex($dir:row) {
+	display: flex;
+	flex-direction: $dir;
+}
+
+@mixin mx($margin) {
+	margin-left: $margin;
+	margin-right: $margin;
+}
+
+@mixin my($margin) {
+	margin-top: $margin;
+	margin-bottom: $margin;
+}
+
+@mixin px($padding) {
+	padding-left: $padding;
+	padding-right: $padding;
+}
+
+@mixin py($padding) {
+	padding-top: $padding;
+	padding-bottom: $padding;
+}

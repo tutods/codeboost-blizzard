@@ -1,0 +1,61 @@
+header {
+	position: relative;
+
+	width: 100%;
+	height: 6rem;
+
+	@include displayFlex();
+	align-items: center;
+
+	border-bottom: .0938rem solid rgba(255, 255, 255, 0.3);
+
+	&>.container {
+		@include displayFlex();
+		align-items: center;
+		justify-content: space-between;
+
+	}
+
+	.left-section {
+		@include displayFlex();
+		align-items: center;
+		gap: 7rem;
+
+		nav {
+			ul {
+				@include displayFlex();
+				align-items: center;
+				gap: 2.125rem;
+
+				a {
+					@include displayFlex();
+					align-items: center;
+					gap: .875rem;
+				}
+			}
+		}
+
+		.logo {
+			position: relative;
+
+			&::after {
+				content: '';
+
+				width: 2.6875rem;
+				height: .0938rem;
+
+				position: absolute;
+				bottom: -1.7813rem;
+				left: 0;
+
+				background-color: $primary;
+			}
+		}
+	}
+
+	.right-section {
+		@include displayFlex();
+		align-items: center;
+		gap: 1rem;
+	}
+}

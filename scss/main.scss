@@ -1,2 +1,15 @@
+// Mixins
+@import 'partials/mixins';
+
+// Variables
+@import 'partials/colors';
+@import 'partials/fonts';
+@import 'partials/reset';
+@import 'partials/container';
+@import 'partials/patterns';
+
+// Components
 @import 'components/header';
+
+// Pages
 @import 'pages/home';
