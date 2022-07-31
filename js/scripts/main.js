@@ -114,12 +114,9 @@ document.body.addEventListener('keypress', function (e) {
 
 // Add class to header on scroll
 const header = document.getElementsByTagName('header')[0];
-let scrollpos = 0;
 
-window.addEventListener('scroll', function (e) {
-	scrollpos = window.scrollY;
-
-	if (scrollpos > 20) {
+window.addEventListener('scroll', function () {
+	if (window.scrollY > 20) {
 		header.classList.add('bg-dark');
 	} else {
 		header.classList.remove('bg-dark');
