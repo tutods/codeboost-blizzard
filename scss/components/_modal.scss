@@ -158,8 +158,9 @@
 						background-color: $white;
 						transition: background-color .3s ease-in;
 
-						img {
-							@include size(1.25rem);
+						span {
+							font-size: 1.25rem;
+							color: $neutral100;
 						}
 
 						&:hover {
