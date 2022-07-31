@@ -77,7 +77,8 @@
 			font-size: .875rem;
 			line-height: 1.3125rem;
 
-			color: $neutral700;
+			color: darken($neutral800, 15%);
+			text-transform: uppercase;
 		}
 	}
 
