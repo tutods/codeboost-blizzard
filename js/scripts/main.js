@@ -1,3 +1,4 @@
+// Hero Slider
 const heroSlider = new Swiper('.slider', {
 	effect: 'fade',
 	loop: true,
@@ -44,18 +45,83 @@ const heroSlider = new Swiper('.slider', {
 	}
 });
 
-const allFilters = document.querySelectorAll('.nav-filter li a');
+// Games Tabs & Filters
+const filtersList = document.querySelectorAll('.nav-filter li a');
 const tabs = document.querySelectorAll('.tab');
+const allGamesBtn = document.querySelector('.filter-btn');
+const allGamesCard = document.querySelectorAll('.card-all-games');
 
-allFilters.forEach((filter, index) => {
+filtersList.forEach((filter, index) => {
 	filter.addEventListener('click', (evt) => {
 		evt.preventDefault();
 
-		allFilters.forEach((item) => item.classList.remove('active'));
+		filtersList.forEach((item) => item.classList.remove('active'));
 
 		tabs.forEach((tab) => tab.classList.remove('active'));
 
 		tabs[index].classList.add('active');
 		filter.classList.add('active');
 	});
+});
+
+allGamesBtn.addEventListener('click', (evt) => {
+	evt.preventDefault();
+
+	filtersList.forEach((item) => item.classList.remove('active'));
+	tabs.forEach((tab) => tab.classList.remove('active'));
+
+	document.querySelector('.tab#all-games').classList.add('active');
+});
+
+allGamesCard.forEach((card) => {
+	card.addEventListener('click', (evt) => {
+		evt.preventDefault();
+
+		filtersList.forEach((item) => item.classList.remove('active'));
+		tabs.forEach((tab) => tab.classList.remove('active'));
+
+		document.querySelector('.tab#all-games').classList.add('active');
+	});
+});
+
+// Modal
+const modal = document.querySelector('.modal');
+const modalOverlay = document.querySelector('.modal .overlay');
+const closeModalBtn = document.querySelector('.modal .box .close');
+
+const loginBtn = document.querySelector('.open-modal');
+
+loginBtn.addEventListener('click', (evt) => {
+	evt.preventDefault();
+
+	modal.classList.remove('hidden');
+});
+
+modalOverlay.addEventListener('click', () => {
+	modal.classList.add('hidden');
+});
+
+closeModalBtn.addEventListener('click', () => {
+	modal.classList.add('hidden');
+});
+
+// Add modal when press esc key
+document.body.addEventListener('keypress', function (e) {
+	if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+		modal.classList.add('hidden');
+	}
+});
+
+// Add class to header on scroll
+const header = document.getElementsByTagName('header')[0];
+let scrollpos = 0;
+
+window.addEventListener('scroll', function (e) {
+	scrollpos = window.scrollY;
+
+	if (scrollpos > 20) {
+		header.classList.add('bg-dark');
+	} else {
+		header.classList.remove('bg-dark');
+	}
 });

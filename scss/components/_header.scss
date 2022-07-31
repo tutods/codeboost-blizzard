@@ -1,8 +1,8 @@
 header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	z-index: 5;
 
 	width: 100%;
 	height: 6rem;
@@ -11,6 +11,13 @@ header {
 	@include flexAlignment(center);
 
 	border-bottom: .0938rem solid rgba(255, 255, 255, 0.3);
+
+	background-color: transparent;
+	transition: background-color .3s;
+
+	&.bg-dark {
+		background-color: $neutral200;
+	}
 
 	&>.container {
 		@include flex();

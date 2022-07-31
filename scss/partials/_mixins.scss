@@ -5,10 +5,7 @@
 
 @mixin flex($dir:row, $wrap: no-wrap) {
 	display: flex;
-
-	@if $dir !=row {
-		flex-direction: $dir;
-	}
+	flex-direction: $dir;
 
 	@if $wrap !=no-wrap {
 		flex-wrap: $wrap;

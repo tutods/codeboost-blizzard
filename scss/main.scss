@@ -7,8 +7,11 @@
 @import 'partials/reset';
 @import 'partials/container';
 @import 'partials/patterns';
+@import 'partials/animations';
 
 // Components
 @import 'components/header';
 @import 'components/slider';
-@import 'components/games'
+@import 'components/games';
+@import 'components/downloads';
+@import 'components/modal';
