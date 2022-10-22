@@ -10,7 +10,8 @@
 			"files": [
 				"*.yml",
 				"*.yaml",
-				"*.sass"
+				"**/*.yml",
+				"**/*.yaml"
 			],
 			"options": {
 				"tabWidth": 2,
