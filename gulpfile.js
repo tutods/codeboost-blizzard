@@ -80,14 +80,20 @@ const buildPackagesStyles = () => {
 };
 
 // Tasks
-gulp.task('sass', buildStyles);
 
 gulp.task('browser-sync', browserSyncInit);
 
-gulp.task('js', buildJS);
-
 gulp.task('packages:js', buildPackagesJS);
 gulp.task('packages:css', buildPackagesStyles);
+
+gulp.task('sass', async() => {
+	buildPackagesStyles();
+	buildStyles();
+});
+gulp.task('js', async () => {
+	buildPackagesJS();
+	buildJS();
+});
 
 // Watch for changes
 const watch = () => {
