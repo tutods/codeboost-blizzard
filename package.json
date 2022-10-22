@@ -11,10 +11,12 @@
 	"type": "module",
 	"scripts": {
 		"dev": "gulp",
+		"build": "concurrently \"yarn:build:sass\" \"yarn:build:js\"",
 		"build:sass": "gulp sass",
 		"build:js": "gulp js"
 	},
 	"dependencies": {
+		"concurrently": "^7.5.0",
 		"phosphor-icons": "^1.4.2",
 		"sass": "^1.54.0",
 		"swiper": "^8.3.2"
