@@ -40,6 +40,24 @@ header {
 					@include flex();
 					@include flexAlignment(center);
 					gap: 0.875rem;
+
+					transition: all 0.3s;
+
+					i {
+						transition: transform 0.3s;
+					}
+
+					&:hover {
+						color: $primary;
+					}
+
+					&.active {
+						color: $primary;
+
+						i {
+							transform: rotate(180deg);
+						}
+					}
 				}
 			}
 		}
@@ -89,6 +107,16 @@ header {
 	filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
 	z-index: 4;
+	opacity: 0;
+	transition: all 0.3s;
+	pointer-events: none;
+	transform: translateY(-100%);
+
+	&.active {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: all;
+	}
 
 	& > .area-menu {
 		padding-top: 2.375rem;
@@ -101,6 +129,8 @@ header {
 			row-gap: 2rem;
 
 			& > li {
+				margin: 0 auto;
+
 				a {
 					width: 11rem;
 					height: 11rem;
@@ -121,7 +151,7 @@ header {
 						color: $textAlt;
 						font-size: 0.875rem;
 						font-weight: 500;
-						word-break: break-all;
+						word-break: break-word;
 						text-align: center;
 					}
 				}
@@ -157,8 +187,40 @@ header {
 				}
 
 				span {
+					color: $white;
+					font-weight: bold;
 					font-size: 1rem;
 					line-height: 1.5rem;
+				}
+			}
+		}
+	}
+
+	&.sports {
+		& > .area-menu {
+			padding-top: 2.375rem;
+			padding-bottom: 3.4375rem;
+
+			.container > ul {
+				grid-template-columns: repeat(5, 1fr);
+				column-gap: 4rem;
+
+				& > li {
+					a {
+						width: 100%;
+						height: 14.8125rem;
+
+						gap: 1.4375rem;
+
+						.icon {
+							width: 100%;
+							height: 179px;
+						}
+
+						span {
+							max-width: 75%;
+						}
+					}
 				}
 			}
 		}

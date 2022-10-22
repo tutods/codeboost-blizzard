@@ -122,3 +122,50 @@ window.addEventListener('scroll', function () {
 		header.classList.remove('bg-dark');
 	}
 });
+
+// Dropdown Menu (Header)
+const btnMenu = document.querySelectorAll('.dropdown-menu');
+
+const buttonsRemoveActive = (items) => {
+	items.forEach((btn) => {
+		btn.classList.remove('active');
+	});
+};
+
+const removeActive = (item) => {
+	item.classList.remove('active');
+};
+
+const addActive = (item) => {
+	item.classList.add('active');
+};
+
+btnMenu.forEach((btn, index) => {
+	btn.addEventListener('click', (event) => {
+		event.preventDefault();
+
+		const menus = document.querySelectorAll('.menu');
+
+		const menuToChange = menus[index];
+
+		if (menuToChange.classList.contains('active')) {
+			removeActive(menuToChange);
+			removeActive(btn);
+		} else {
+			// remove active on all menus
+			menus.forEach((menu) => {
+				removeActive(menu);
+
+				menu.addEventListener('mouseleave', () => {
+					removeActive(menu);
+					removeActive(btn);
+					buttonsRemoveActive(btnMenu);
+				});
+			});
+
+			buttonsRemoveActive(btnMenu);
+			addActive(btn);
+			addActive(menuToChange);
+		}
+	});
+});
