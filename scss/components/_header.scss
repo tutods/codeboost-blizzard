@@ -1,228 +1,272 @@
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 
-	width: 100%;
-	height: 6rem;
+  width: 100%;
+  height: 6rem;
 
-	@include flex();
-	@include flexAlignment(center);
+  @include flex();
+  @include flexAlignment(center);
 
-	border-bottom: 0.0938rem solid rgba(255, 255, 255, 0.3);
+  border-bottom: 0.0938rem solid rgba(255, 255, 255, 0.3);
 
-	background-color: transparent;
-	transition: background-color 0.3s;
+  background-color: transparent;
+  transition: background-color 0.3s;
 
-	z-index: 999;
+  z-index: 999;
 
-	&.bg-dark {
-		background-color: $neutral200;
-	}
+  @media screen and (max-width: 768px) {
+    height: 5rem;
+  }
 
-	& > .container {
-		@include flex();
-		@include flexAlignment(center, space-between);
-	}
+  &.bg-dark {
+    background-color: $neutral200;
+  }
 
-	.left-section {
-		@include flex();
-		@include flexAlignment(center);
-		gap: 7rem;
+  & > .container {
+    @include flex();
+    @include flexAlignment(center, space-between);
+  }
 
-		nav {
-			ul {
-				@include flex();
-				@include flexAlignment(center);
-				gap: 2.125rem;
+  .left-section {
+    @include flex();
+    @include flexAlignment(center);
+    gap: 7rem;
 
-				a {
-					@include flex();
-					@include flexAlignment(center);
-					gap: 0.875rem;
+    nav {
+      ul {
+        @include flex();
+        @include flexAlignment(center);
+        gap: 2.125rem;
 
-					transition: all 0.3s;
+        a {
+          @include flex();
+          @include flexAlignment(center);
+          gap: 0.875rem;
 
-					i {
-						transition: transform 0.3s;
-					}
+          transition: all 0.3s;
 
-					&:hover {
-						color: $primary;
-					}
+          i {
+            transition: transform 0.3s;
+          }
 
-					&.active {
-						color: $primary;
+          &:hover {
+            color: $primary;
+          }
 
-						i {
-							transform: rotate(180deg);
-						}
-					}
-				}
-			}
-		}
+          &.active {
+            color: $primary;
 
-		.logo {
-			position: relative;
+            i {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
 
-			&::after {
-				content: '';
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
+    }
 
-				width: 2.6875rem;
-				height: 0.0938rem;
+    .logo {
+      position: relative;
 
-				position: absolute;
-				bottom: -1.7813rem;
-				left: 0;
+      &::after {
+        content: '';
 
-				background-color: $primary;
-			}
-		}
-	}
+        width: 2.6875rem;
+        height: 0.0938rem;
 
-	.right-section {
-		@include flex();
-		@include flexAlignment(center);
-		gap: 1rem;
-	}
+        position: absolute;
+        bottom: -1.7813rem;
+        left: 0;
+
+        background-color: $primary;
+      }
+
+        @media screen and (max-width: 768px) {
+          width: 4.3125rem;
+
+          &::after {
+            bottom: -1.5rem;
+          }
+        }
+    }
+  }
+
+  .right-section {
+    @include flex();
+    @include flexAlignment(center);
+    gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+      & > a {
+        display: none;
+      }
+
+      .btn-mobile {
+        margin-left: 0;
+      }
+    }
+
+    .btn-mobile {
+      display: none;
+
+      color: $white;
+      font-size: 1.75rem;
+
+      @media screen and (max-width: 991px) {
+        display: inline-flex;
+        align-items: center;
+
+        margin-left: 4.5625rem;
+      }
+    }
+  }
 }
 
 .menu {
-	position: absolute;
-	top: 0;
-	left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-	width: 100%;
+  width: 100%;
 
-	padding-top: 6rem; // header height
+  padding-top: 6rem; // header height
 
-	background: linear-gradient(
-		180deg,
-		#020203 0%,
-		rgba(14, 17, 23, 0.92) 96.3%,
-		rgba(14, 17, 23, 0.9) 100%
-	);
+  background: linear-gradient(
+                  180deg,
+                  #020203 0%,
+                  rgba(14, 17, 23, 0.92) 96.3%,
+                  rgba(14, 17, 23, 0.9) 100%
+  );
 
-	backdrop-filter: blur(12px);
-	filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(12px);
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
-	z-index: 4;
-	opacity: 0;
-	transition: all 0.3s;
-	pointer-events: none;
-	transform: translateY(-100%);
+  z-index: 4;
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+  transform: translateY(-100%);
 
-	&.active {
-		opacity: 1;
-		transform: translateY(0);
-		pointer-events: all;
-	}
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 
-	& > .area-menu {
-		padding-top: 2.375rem;
-		padding-bottom: 3.4375rem;
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
 
-		.container > ul {
-			display: grid;
-			grid-template-columns: repeat(6, 1fr);
-			column-gap: 1.75rem;
-			row-gap: 2rem;
+  & > .area-menu {
+    padding-top: 2.375rem;
+    padding-bottom: 3.4375rem;
 
-			& > li {
-				margin: 0 auto;
+    .container > ul {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 1.75rem;
+      row-gap: 2rem;
 
-				a {
-					width: 11rem;
-					height: 11rem;
+      & > li {
+        margin: 0 auto;
 
-					@include flex(column);
-					@include flexAlignment(center, center);
-					gap: 0.5rem;
+        a {
+          width: 11rem;
+          height: 11rem;
 
-					.icon {
-						width: 70px;
-						height: 70px;
+          @include flex(column);
+          @include flexAlignment(center, center);
+          gap: 0.5rem;
 
-						@include flex(column);
-						@include flexAlignment(center, center);
-					}
+          .icon {
+            width: 70px;
+            height: 70px;
 
-					span {
-						color: $textAlt;
-						font-size: 0.875rem;
-						font-weight: 500;
-						word-break: break-word;
-						text-align: center;
-					}
-				}
-			}
-		}
-	}
+            @include flex(column);
+            @include flexAlignment(center, center);
+          }
 
-	& > .footer-menu {
-		@include flex();
-		@include flexAlignment(center, center);
+          span {
+            color: $textAlt;
+            font-size: 0.875rem;
+            font-weight: 500;
+            word-break: break-word;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 
-		padding-top: 1.5rem;
-		padding-bottom: 1.5rem;
+  & > .footer-menu {
+    @include flex();
+    @include flexAlignment(center, center);
 
-		background-color: rgba(21, 23, 27, 0.7);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 
-		& > ul {
-			@include flex();
-			@include flexAlignment(center);
-			gap: 4rem;
+    background-color: rgba(21, 23, 27, 0.7);
 
-			li > a {
-				@include flex();
-				@include flexAlignment(center);
-				gap: 0.5rem;
+    & > ul {
+      @include flex();
+      @include flexAlignment(center);
+      gap: 4rem;
 
-				.icon {
-					width: 1.5rem;
-					height: 1.5rem;
+      li > a {
+        @include flex();
+        @include flexAlignment(center);
+        gap: 0.5rem;
 
-					@include flex();
-					@include flexAlignment(center, center);
-				}
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
 
-				span {
-					color: $white;
-					font-weight: bold;
-					font-size: 1rem;
-					line-height: 1.5rem;
-				}
-			}
-		}
-	}
+          @include flex();
+          @include flexAlignment(center, center);
+        }
 
-	&.sports {
-		& > .area-menu {
-			padding-top: 2.375rem;
-			padding-bottom: 3.4375rem;
+        span {
+          color: $white;
+          font-weight: bold;
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
 
-			.container > ul {
-				grid-template-columns: repeat(5, 1fr);
-				column-gap: 4rem;
+  &.sports {
+    & > .area-menu {
+      padding-top: 2.375rem;
+      padding-bottom: 3.4375rem;
 
-				& > li {
-					a {
-						width: 100%;
-						height: 14.8125rem;
+      .container > ul {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 4rem;
 
-						gap: 1.4375rem;
+        & > li {
+          a {
+            width: 100%;
+            height: 14.8125rem;
 
-						.icon {
-							width: 100%;
-							height: 179px;
-						}
+            gap: 1.4375rem;
 
-						span {
-							max-width: 75%;
-						}
-					}
-				}
-			}
-		}
-	}
+            .icon {
+              width: 100%;
+              height: 179px;
+            }
+
+            span {
+              max-width: 75%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
