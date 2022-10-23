@@ -1,0 +1,46 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	background-color: $neutral100;
+	color: $white;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	&:not(i) {
+		font-family: 'Poppins', sans-serif;
+	}
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	color: $white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	box-shadow: none;
+
+	cursor: pointer;
+}
+
+input {
+	border: none
+}

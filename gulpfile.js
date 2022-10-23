@@ -86,7 +86,7 @@ gulp.task('browser-sync', browserSyncInit);
 gulp.task('packages:js', buildPackagesJS);
 gulp.task('packages:css', buildPackagesStyles);
 
-gulp.task('sass', async() => {
+gulp.task('sass', async () => {
 	buildPackagesStyles();
 	buildStyles();
 });

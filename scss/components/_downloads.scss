@@ -1,0 +1,129 @@
+.downloads {
+	background-image: url('/img/bg-download.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	overflow: hidden;
+
+	.container {
+		position: relative;
+
+		height: 53.25rem;
+		width: 100%;
+
+
+		padding-top: 8.25rem;
+
+		@include flex();
+		gap: 1.4375rem;
+
+		div {
+			&:nth-of-type(1) {
+				width: 100%;
+				max-width: 24.375rem;
+
+				@include flex(column);
+				@include flexAlignment(flex-start);
+				gap: 1.875rem;
+
+				h2 {
+					font-weight: 700;
+					font-size: 32px;
+					line-height: 110.2%;
+				}
+
+				ul {
+					li {
+						@include flex();
+						@include flexAlignment(center);
+						gap: 1rem;
+
+						margin-left: 0;
+
+						font-size: 1.125rem;
+						color: #828792;
+
+						img {
+							width: 1.125rem;
+							height: auto;
+						}
+					}
+
+					li+li {
+						margin-top: 1.5rem;
+					}
+				}
+
+				.btn {
+					gap: .5rem;
+
+					margin-top: .5625rem; // gap 30px + 9px = 39px (layout)
+					@include px(2rem);
+					@include py(.875rem);
+
+					span {
+						font-size: 1.5rem;
+					}
+				}
+
+				.app {
+					@include flex(row);
+					@include flexAlignment(center);
+					gap: 1.125rem;
+
+					margin-top: 1.0625rem; // gap 30px + 17px = 47px (layout)
+
+					i {
+						font-size: 1.25rem;
+					}
+
+					p {
+						flex: 1 1 auto;
+
+						font-weight: 600;
+						font-size: .875rem;
+						line-height: 1.3125rem;
+						color: #E5E5E5;
+
+						a {
+							text-decoration: underline;
+
+							transition: color .3s;
+
+							&:hover {
+								color: $primaryLighter;
+							}
+						}
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				position: absolute;
+				top: 6rem;
+				right: -17.1875rem;
+
+				width: 100%;
+				max-width: 66.625rem;
+				height: 38.125rem;
+
+				.lg {
+					position: absolute;
+					top: 0;
+					left: 0;
+
+					animation: float 8s ease-in-out infinite;
+				}
+
+				.sm {
+					position: absolute;
+					bottom: -1.7813rem;
+					right: 12.5rem;
+
+					animation: float 6s ease-in-out infinite;
+				}
+			}
+		}
+	}
+}

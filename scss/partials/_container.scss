@@ -1,0 +1,11 @@
+.container {
+	width: 100%;
+	max-width: 83.125rem;
+
+	margin: 0 auto;
+	padding: 0 .9375rem;
+
+	@media (max-width: 1440px) {
+		nax-width: 77.875rem;
+	}
+}
