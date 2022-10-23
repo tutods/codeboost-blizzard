@@ -25,9 +25,9 @@
 			}
 
 			span {
-				margin-top: .6875rem;
+				margin-top: 0.6875rem;
 
-				font-size: .9375rem;
+				font-size: 0.9375rem;
 				font-weight: 600;
 				text-transform: uppercase;
 
@@ -52,12 +52,12 @@
 						img {
 							opacity: 0.5;
 
-							transition: opacity .3s ease;
+							transition: opacity 0.3s ease;
 						}
 
 						&.active {
 							img {
-								opacity: 1
+								opacity: 1;
 							}
 						}
 					}
@@ -67,7 +67,7 @@
 			.filter-btn {
 				@include flex();
 				@include flexAlignment(center);
-				gap: .625rem;
+				gap: 0.625rem;
 
 				font-size: 1rem;
 				line-height: 1.5rem;
@@ -82,10 +82,14 @@
 			grid-template-columns: repeat(4, 1fr);
 			gap: 2rem;
 
-			animation: fadeUp .4s forwards;
+			animation: fadeUp 0.4s forwards;
 
 			&:not(.active) {
 				display: none;
+			}
+
+			@media screen and (max-width: 768px) {
+				grid-template-columns: 1fr;
 			}
 		}
 	}
@@ -99,15 +103,15 @@
 		@include flexAlignment(center, center);
 		gap: 2.1875rem;
 
-		border: .0625rem solid #212428;
-		border-radius: .25rem;
+		border: 0.0625rem solid #212428;
+		border-radius: 0.25rem;
 
-		transition: border-color .3s ease-in, color .3s ease-in;
+		transition: border-color 0.3s ease-in, color 0.3s ease-in;
 
 		span {
 			@include flex();
 			@include flexAlignment(center);
-			gap: .625rem;
+			gap: 0.625rem;
 
 			font-size: 1rem;
 			line-height: 1.5rem;
