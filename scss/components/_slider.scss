@@ -43,18 +43,6 @@
 
       }
 
-      @media screen and (max-width: 480px) {
-        bottom: 4.0625rem;
-      }
-
-      @media screen and (max-width: 991px) {
-        left: 3.625rem;
-        top: initial;
-        bottom: 0.75rem;
-
-        @include flex();
-      }
-
       @media (max-width: 1200px) {
         left: 1%;
       }
@@ -66,11 +54,26 @@
       @media (min-width: 1921px) {
         left: 28%;
       }
+
+      @media screen and (max-width: 991px) {
+        left: 0.9375rem;
+        top: initial;
+        bottom: 1rem;
+
+        @include flex();
+      }
+
+      @media screen and (max-width: 480px) {
+        gap: 1rem;
+      }
     }
 
     .swiper-wrapper {
       .swiper-slide {
-        padding-top: 12.9375rem;
+        @include flex();
+        @include flexAlignment(center, center);
+
+        //padding-top: 12.9375rem;
 
         background-color: rgba(0, 0, 0, 0.5);
         background-blend-mode: overlay;
@@ -106,7 +109,7 @@
           @include flex();
           @include flexAlignment(flex-start, space-between);
 
-          gap: 10.375rem;
+          //gap: 10.375rem;
 
           .content {
             width: 100%;
