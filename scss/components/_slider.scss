@@ -5,10 +5,6 @@
   .slider {
     height: 46.875rem;
 
-    @media screen and (max-width: 991px) {
-      overflow: hidden;
-    }
-
     .swiper-pagination {
       all: unset;
       position: absolute;
@@ -47,6 +43,10 @@
 
       }
 
+      @media screen and (max-width: 480px) {
+        bottom: 4.0625rem;
+      }
+
       @media screen and (max-width: 991px) {
         left: 3.625rem;
         top: initial;
@@ -80,16 +80,27 @@
         &.slide {
           &-diablo {
             background-image: url('/img/games/slider/backgrounds/diablo-iv.jpg');
+
+            @media screen and (max-width: 480px) {
+              background-position: center;
+            }
           }
 
-          &-hearthsone {
+          &-hearthstone {
             background-image: url('/img/games/slider/backgrounds/hearthstone.jpg');
           }
 
           &-world-of-warcraft {
             background-image: url('/img/games/slider/backgrounds/world-of-warcraft-shadowlands.jpg');
           }
+
+          &-world-of-warcraft, &-hearthstone {
+            @media screen and (max-width: 480px) {
+              background-position: right;
+            }
+          }
         }
+
 
         .container {
           @include flex();
@@ -109,6 +120,10 @@
               font-weight: 700;
               font-size: 4rem;
               line-height: 110%;
+
+              @media screen and (max-width: 480px) {
+                font-size: 2.5rem;
+              }
             }
 
             p {
@@ -135,6 +150,10 @@
 
             @media screen and (max-width: 991px) {
               margin-left: 0;
+            }
+
+            @media screen and (max-width: 480px) {
+              max-width: unset;
             }
           }
 
@@ -237,10 +256,20 @@
               }
             }
 
+            @media screen and (max-width: 480px) {
+              display: none;
+            }
           }
 
         }
       }
+    }
+
+    @media screen and (max-width: 991px) {
+      overflow: hidden;
+    }
+    @media screen and (max-width: 480px) {
+      height: 38.875rem;
     }
   }
 }
