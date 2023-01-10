@@ -1,161 +1,182 @@
 .games {
-	@include py(5.3125rem);
+  @include py(5.3125rem);
 
-	.top-content {
-		@include flex();
-		@include flexAlignment(flex-end, space-between);
-		gap: 9.9375rem;
+  .top-content {
+    @include flex();
+    @include flexAlignment(flex-end, space-between);
+    gap: 9.9375rem;
 
-		margin-bottom: 5.3125rem;
+    margin-bottom: 5.3125rem;
 
-		@media screen and (max-width: 991px) {
-			margin-bottom: 4rem;
-		}
+    @media screen and (max-width: 991px) {
+      margin-bottom: 4rem;
+    }
 
-		div:nth-of-type(1) {
-			@include flex();
-			@include flexAlignment(flex-start, space-between);
+    @media screen and (max-width: 480px) {
+      gap: unset;
+    }
 
-			max-width: 24.375rem;
-			width: 100%;
+    div:nth-of-type(1) {
+      @include flex();
+      @include flexAlignment(flex-start, space-between);
 
-			@media screen and (max-width: 991px) {
-				width: fit-content;
-			}
+      max-width: 24.375rem;
+      width: 100%;
 
-			h2 {
-				width: 100%;
-				max-width: 10.9375rem;
+      @media screen and (max-width: 991px) {
+        width: fit-content;
+      }
 
-				font-weight: 700;
-				font-size: 2rem;
-				line-height: 110.2%;
-			}
+      h2 {
+        width: 100%;
+        max-width: 10.9375rem;
 
-			span {
-				margin-top: 0.6875rem;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 110.2%;
 
-				font-size: 0.9375rem;
-				font-weight: 600;
-				text-transform: uppercase;
+        @media screen and (max-width: 480px) {
+          font-size: 1.75rem;
+        }
+      }
 
-				color: $neutral800;
+      span {
+        margin-top: 0.6875rem;
 
-				@media screen and (max-width: 991px) {
-					display: none;
-				}
-			}
-		}
+        font-size: 0.9375rem;
+        font-weight: 600;
+        text-transform: uppercase;
 
-		div:nth-of-type(2) {
-			flex: 1;
-			@include flex();
-			@include flexAlignment(flex-end, space-between);
+        color: $neutral800;
 
-			ul {
-				@include flex();
-				@include flexAlignment(center);
-				gap: 1.5rem;
+        @media screen and (max-width: 991px) {
+          display: none;
+        }
+      }
+    }
 
-				li {
-					margin-left: 0;
+    div:nth-of-type(2) {
+      flex: 1 0 auto;
+      @include flex();
+      @include flexAlignment(flex-end, space-between);
 
-					a {
-						img {
-							opacity: 0.5;
+      @media screen and (max-width: 480px) {
+        @include flexAlignment(flex-end, flex-end);
+      }
 
-							transition: opacity 0.3s ease;
+      ul {
+        @include flex();
+        @include flexAlignment(center);
+        gap: 1.5rem;
 
-							@media screen and (max-width: 991px) {
-								width: 22px;
-								height: 22px;
-							}
-						}
+        @media screen and (max-width: 480px) {
+          display: none;
+        }
 
-						&.active {
-							img {
-								opacity: 1;
-							}
-						}
-					}
-				}
-			}
+        li {
+          margin-left: 0;
 
-			.filter-btn {
-				@include flex();
-				@include flexAlignment(center);
-				gap: 0.625rem;
+          a {
+            img {
+              opacity: 0.5;
 
-				font-size: 1rem;
-				line-height: 1.5rem;
-				color: $primary;
-			}
-		}
-	}
+              transition: opacity 0.3s ease;
 
-	.tabs {
-		.tab {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 2rem;
+              @media screen and (max-width: 991px) {
+                width: 22px;
+                height: 22px;
+              }
+            }
 
-			animation: fadeUp 0.4s forwards;
+            &.active {
+              img {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
 
-			&:not(.active) {
-				display: none;
-			}
+      .filter-btn {
+        @include flex();
+        @include flexAlignment(center);
+        gap: 0.625rem;
 
-			@media screen and (max-width: 991px) {
-				grid-template-columns: repeat(3, 1fr);
-			}
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: $primary;
 
-			@media screen and (max-width: 480px) {
-				grid-template-columns: 1fr;
-			}
-		}
-	}
 
-	.card-all-games {
-		width: 100%;
-		max-width: 17.5rem;
-		height: 25rem;
+        @media screen and (max-width: 480px) {
+          width: fit-content;
+        }
+      }
+    }
+  }
 
-		@include flex(column);
-		@include flexAlignment(center, center);
-		gap: 2.1875rem;
+  .tabs {
+    .tab {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
 
-		border: 0.0625rem solid #212428;
-		border-radius: 0.25rem;
+      animation: fadeUp 0.4s forwards;
 
-		transition: border-color 0.3s ease-in, color 0.3s ease-in;
+      &:not(.active) {
+        display: none;
+      }
 
-		span {
-			@include flex();
-			@include flexAlignment(center);
-			gap: 0.625rem;
+      @media screen and (max-width: 991px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-			font-size: 1rem;
-			line-height: 1.5rem;
-		}
+      @media screen and (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 
-		&:hover {
-			border-color: $primary;
+  .card-all-games {
+    width: 100%;
+    max-width: 17.5rem;
+    height: 25rem;
 
-			span {
-				color: $primary;
-			}
-		}
-	}
+    @include flex(column);
+    @include flexAlignment(center, center);
+    gap: 2.1875rem;
+
+    border: 0.0625rem solid #212428;
+    border-radius: 0.25rem;
+
+    transition: border-color 0.3s ease-in, color 0.3s ease-in;
+
+    span {
+      @include flex();
+      @include flexAlignment(center);
+      gap: 0.625rem;
+
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    &:hover {
+      border-color: $primary;
+
+      span {
+        color: $primary;
+      }
+    }
+  }
 }
 
 @keyframes fadeUp {
-	from {
-		opacity: 0;
-		transform: translateY(2.5rem);
-	}
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
 
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

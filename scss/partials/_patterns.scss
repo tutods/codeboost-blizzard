@@ -42,15 +42,25 @@
 
 	display: inline-block;
 
+	@media screen and (max-width: 480px) {
+		max-width: unset;
+	}
+
 	.image {
 		width: 100%;
-		max-width: 17.5rem;
+		//max-width: 17.5rem;
 		height: 25rem;
 
 		margin-bottom: 1.5rem;
 		border-radius: .25rem;
 
 		overflow: hidden;
+
+		@media screen and (max-width: 480px) {
+			height: 31.25rem;
+
+			margin-bottom: 0;
+		}
 
 		img {
 			height: 100%;
@@ -79,6 +89,10 @@
 
 			color: darken($neutral800, 15%);
 			text-transform: uppercase;
+		}
+
+		@media screen and (max-width: 480px) {
+			display: none;
 		}
 	}
 
