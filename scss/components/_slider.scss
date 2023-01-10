@@ -70,6 +70,8 @@
 
     .swiper-wrapper {
       .swiper-slide {
+        position: relative;
+
         @include flex();
         @include flexAlignment(center, center);
 
@@ -179,6 +181,10 @@
 
                 object-fit: cover;
               }
+
+              @media screen and (max-width: 991px) {
+                display: none;
+              }
             }
 
             .video {
@@ -196,6 +202,10 @@
                 line-height: 1.25rem;
                 text-transform: uppercase;
                 text-align: right;
+
+                @media screen and (max-width: 991px) {
+                  display: none;
+                }
               }
 
               .btn-video {
@@ -255,8 +265,28 @@
                       opacity: 1;
                     }
                   }
+
+                  & > i {
+                    display: none;
+                  }
+                }
+
+                @media screen and (max-width: 991px) {
+                  width: 17.5rem;
+                  height: 10.8125rem;
                 }
               }
+
+              @media screen and (max-width: 991px) {
+                position: absolute;
+                bottom: 4.4375rem;
+                right: 2.9375rem;
+              }
+            }
+
+            @media screen and (max-width: 991px) {
+              flex: unset;
+              margin: 0;
             }
 
             @media screen and (max-width: 480px) {
