@@ -5,6 +5,10 @@
   .slider {
     height: 46.875rem;
 
+    @media screen and (max-width: 991px) {
+      overflow: hidden;
+    }
+
     .swiper-pagination {
       all: unset;
       position: absolute;
