@@ -61,7 +61,7 @@
     overflow: hidden;
 
     @media screen and (max-width: 480px) {
-      height: 31.25rem;
+      height: 13.3125rem;
 
       margin-bottom: 0;
     }
@@ -101,12 +101,14 @@
       left: 0;
       right: 0;
 
+      height: 100%;
+
       display: none;
 
       @include flexAlignment(flex-start, flex-end);
 
       padding: 1.25rem;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.90) 65%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 25%, rgba(0, 0, 0, 0.90) 75%);
 
       transition: all 0.3s ease-in-out;
     }
