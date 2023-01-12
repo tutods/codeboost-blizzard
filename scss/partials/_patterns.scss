@@ -60,12 +60,6 @@
 
     overflow: hidden;
 
-    @media screen and (max-width: 480px) {
-      height: 13.3125rem;
-
-      margin-bottom: 0;
-    }
-
     img {
       height: 100%;
       width: 100%;
@@ -73,6 +67,16 @@
       object-fit: cover;
 
       transition: transform .2s ease-in;
+    }
+
+    @media screen and (max-width: 991px) {
+      height: 17.375rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      height: 13.3125rem;
+
+      margin-bottom: 0;
     }
   }
 
@@ -85,6 +89,10 @@
       font-weight: 600;
 
       color: $white;
+
+      @media screen and (max-width: 480px) {
+        line-height: 1.15;
+      }
     }
 
     span {
@@ -121,8 +129,16 @@
       }
     }
 
-    .info {
-      @include flex(column);
+    @media screen and (max-width: 480px) {
+      .image {
+        img {
+          transform: unset;
+        }
+      }
+
+      .info {
+        @include flex(column);
+      }
     }
   }
 }
