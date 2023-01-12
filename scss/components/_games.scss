@@ -165,13 +165,11 @@
     }
 
     @media screen and (max-width: 991px) {
-      height: 17.375rem;
+      height: 100%;
     }
 
     @media screen and (max-width: 480px) {
       height: 13.3125rem;
-
-      margin-bottom: 0;
     }
   }
 }
