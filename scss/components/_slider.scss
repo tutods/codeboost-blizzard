@@ -70,8 +70,6 @@
 
     .swiper-wrapper {
       .swiper-slide {
-        position: relative;
-
         @include flex();
         @include flexAlignment(center, center);
 
@@ -86,7 +84,7 @@
           &-diablo {
             background-image: url('/img/games/slider/backgrounds/diablo-iv.jpg');
 
-            @media screen and (max-width: 480px) {
+            @media screen and (max-width: 991px) {
               background-position: center;
             }
           }
@@ -100,12 +98,11 @@
           }
 
           &-world-of-warcraft, &-hearthstone {
-            @media screen and (max-width: 480px) {
+            @media screen and (max-width: 991px) {
               background-position: right;
             }
           }
         }
-
 
         .container {
           @include flex();
@@ -154,12 +151,11 @@
             }
 
             @media screen and (max-width: 991px) {
+              max-width: unset;
+
               margin-left: 0;
             }
 
-            @media screen and (max-width: 480px) {
-              max-width: unset;
-            }
           }
 
           .video-content {
@@ -278,13 +274,13 @@
               }
 
               @media screen and (max-width: 991px) {
-                position: absolute;
-                bottom: 4.4375rem;
-                right: 2.9375rem;
+                margin-top: 0;
               }
             }
 
             @media screen and (max-width: 991px) {
+              width: 100%;
+
               flex: unset;
               margin: 0;
             }
@@ -294,11 +290,17 @@
             }
           }
 
+          @media screen and (max-width: 991px) {
+            @include flex(column);
+            gap: 0.25rem;
+          }
         }
       }
     }
 
     @media screen and (max-width: 991px) {
+      height: 46rem;
+
       overflow: hidden;
     }
     @media screen and (max-width: 480px) {

@@ -86,13 +86,13 @@ header {
         background-color: $primary;
       }
 
-        @media screen and (max-width: 768px) {
-          width: 4.3125rem;
+      @media screen and (max-width: 768px) {
+        width: 4.3125rem;
 
-          &::after {
-            bottom: -1.5rem;
-          }
+        &::after {
+          bottom: -1.5rem;
         }
+      }
     }
   }
 
@@ -100,16 +100,6 @@ header {
     @include flex();
     @include flexAlignment(center);
     gap: 1rem;
-
-    @media screen and (max-width: 768px) {
-      & > a {
-        display: none;
-      }
-
-      .btn-mobile {
-        margin-left: 0;
-      }
-    }
 
     .btn-mobile {
       display: none;
@@ -122,6 +112,16 @@ header {
         align-items: center;
 
         margin-left: 4.5625rem;
+      }
+
+      @media screen and (max-width: 480px) {
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      & > a {
+        display: none;
       }
     }
   }
