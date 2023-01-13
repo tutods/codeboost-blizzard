@@ -1,150 +1,160 @@
 .downloads {
-	background-image: url('/img/bg-download.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
+  background-image: url('/img/bg-download.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-	overflow: hidden;
+  overflow: hidden;
 
-	.container {
-		position: relative;
+  .container {
+    position: relative;
 
-		height: 53.25rem;
-		width: 100%;
+    height: 53.25rem;
+    width: 100%;
 
 
-		padding-top: 8.25rem;
+    padding-top: 8.25rem;
 
-		@include flex();
-		gap: 1.4375rem;
+    @include flex();
+    gap: 1.4375rem;
 
-		div {
-			&:nth-of-type(1) {
-				width: 100%;
-				max-width: 24.375rem;
+    div {
+      &:nth-of-type(1) {
+        width: 100%;
+        max-width: 24.375rem;
+        height: fit-content;
 
-				@include flex(column);
-				@include flexAlignment(flex-start);
-				gap: 1.875rem;
+        @include flex(column);
+        @include flexAlignment(flex-start);
+        gap: 1.875rem;
 
-				h2 {
-					font-weight: 700;
-					font-size: 32px;
-					line-height: 110.2%;
-				}
+        h2 {
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 110.2%;
+        }
 
-				ul {
-					li {
-						@include flex();
-						@include flexAlignment(center);
-						gap: 1rem;
+        ul {
+          li {
+            @include flex();
+            @include flexAlignment(center);
+            gap: 1rem;
 
-						margin-left: 0;
+            margin-left: 0;
 
-						font-size: 1.125rem;
-						color: #828792;
+            font-size: 1.125rem;
+            color: #828792;
 
-						img {
-							width: 1.125rem;
-							height: auto;
-						}
-					}
+            img {
+              width: 1.125rem;
+              height: auto;
+            }
+          }
 
-					li+li {
-						margin-top: 1.5rem;
-					}
-				}
+          li + li {
+            margin-top: 1.5rem;
+          }
+        }
 
-				.btn {
-					gap: .5rem;
+        .btn {
+          gap: .5rem;
 
-					margin-top: .5625rem; // gap 30px + 9px = 39px (layout)
-					@include px(2rem);
-					@include py(.875rem);
+          margin-top: .5625rem; // gap 30px + 9px = 39px (layout)
+          @include px(2rem);
+          @include py(.875rem);
 
-					span {
-						font-size: 1.5rem;
-					}
-				}
+          span {
+            font-size: 1.5rem;
+          }
+        }
 
-				.app {
-					@include flex(row);
-					@include flexAlignment(center);
-					gap: 1.125rem;
+        .app {
+          @include flex(row);
+          @include flexAlignment(center);
+          gap: 1.125rem;
 
-					margin-top: 1.0625rem; // gap 30px + 17px = 47px (layout)
+          margin-top: 1.0625rem; // gap 30px + 17px = 47px (layout)
 
-					i {
-						font-size: 1.25rem;
-					}
+          i {
+            font-size: 1.25rem;
+          }
 
-					p {
-						flex: 1 1 auto;
+          p {
+            flex: 1 1 auto;
 
-						font-weight: 600;
-						font-size: .875rem;
-						line-height: 1.3125rem;
-						color: #E5E5E5;
+            font-weight: 600;
+            font-size: .875rem;
+            line-height: 1.3125rem;
+            color: #E5E5E5;
 
-						a {
-							text-decoration: underline;
+            a {
+              text-decoration: underline;
 
-							transition: color .3s;
+              transition: color .3s;
 
-							&:hover {
-								color: $primaryLighter;
-							}
-						}
-					}
-				}
-			}
+              &:hover {
+                color: $primaryLighter;
+              }
+            }
+          }
+        }
+      }
 
-			&:nth-of-type(2) {
-				position: absolute;
-				top: 6rem;
-				right: -17.1875rem;
+      &:nth-of-type(2) {
+        position: absolute;
+        top: 6rem;
+        right: -17.1875rem;
 
-				width: 100%;
-				max-width: 66.625rem;
-				height: 38.125rem;
+        width: 100%;
+        max-width: 66.625rem;
+        height: 38.125rem;
 
-				.lg {
-					position: absolute;
-					top: 0;
-					left: 0;
+        .lg {
+          position: absolute;
+          top: 0;
+          left: 0;
 
-					animation: float 8s ease-in-out infinite;
-				}
+          animation: float 8s ease-in-out infinite;
+        }
 
-				.sm {
-					position: absolute;
-					bottom: -1.7813rem;
-					right: 12.5rem;
+        .sm {
+          position: absolute;
+          bottom: -1.7813rem;
+          right: 12.5rem;
 
-					animation: float 6s ease-in-out infinite;
+          animation: float 6s ease-in-out infinite;
 
-					@media screen and (max-width: 480px) {
-						right: 0;
-						bottom: 0;
+          @media screen and (max-width: 991px) {
+            right: 3.3125rem;
+            bottom: -1.75rem;
+          }
 
-						width: 17.25rem;
-					}
-				}
+          @media screen and (max-width: 480px) {
+            right: 0;
+            bottom: 0;
 
-				@media screen and (max-width: 480px) {
-					position: relative;
-					top: 0;
-					right: 0;
-				}
-			}
-		}
+            width: 17.25rem;
+          }
+        }
 
-		@media screen and (max-width: 480px) {
-			@include flex(column);
-		}
-	}
+        @media screen and (max-width: 991px) {
+          right: -21.875rem;
+        }
 
-	@media screen and (max-width: 480px) {
-		padding-bottom: 3.125rem;
-	}
+        @media screen and (max-width: 480px) {
+          position: relative;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      @include flex(column);
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding-bottom: 3.125rem;
+  }
 }
