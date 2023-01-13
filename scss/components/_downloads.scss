@@ -122,8 +122,29 @@
 					right: 12.5rem;
 
 					animation: float 6s ease-in-out infinite;
+
+					@media screen and (max-width: 480px) {
+						right: 0;
+						bottom: 0;
+
+						width: 17.25rem;
+					}
+				}
+
+				@media screen and (max-width: 480px) {
+					position: relative;
+					top: 0;
+					right: 0;
 				}
 			}
 		}
+
+		@media screen and (max-width: 480px) {
+			@include flex(column);
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		padding-bottom: 3.125rem;
 	}
 }
