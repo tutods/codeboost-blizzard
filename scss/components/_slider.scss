@@ -108,8 +108,6 @@
           @include flex();
           @include flexAlignment(flex-start, space-between);
 
-          //gap: 10.375rem;
-
           .content {
             width: 100%;
             max-width: 35.125rem;
@@ -122,6 +120,10 @@
               font-weight: 700;
               font-size: 4rem;
               line-height: 110%;
+
+              @media screen and (max-width: 991px) {
+                font-size: 3.5rem;
+              }
 
               @media screen and (max-width: 480px) {
                 font-size: 2.5rem;
@@ -162,7 +164,7 @@
             flex: 0 1 17.5rem;
 
             @include flex(column);
-            justify-content: space-between;
+            @include flexAlignment(flex-start, space-between);
 
             margin-top: -2.125rem;
 
@@ -176,10 +178,6 @@
                 height: auto;
 
                 object-fit: cover;
-              }
-
-              @media screen and (max-width: 991px) {
-                display: none;
               }
             }
 
@@ -279,10 +277,9 @@
             }
 
             @media screen and (max-width: 991px) {
-              width: 100%;
+              gap: 4rem;
 
-              flex: unset;
-              margin: 0;
+              margin-top: 0;
             }
 
             @media screen and (max-width: 480px) {
@@ -291,8 +288,8 @@
           }
 
           @media screen and (max-width: 991px) {
-            @include flex(column);
-            gap: 0.25rem;
+            align-items: center;
+            gap: 1.25rem;
           }
         }
       }
