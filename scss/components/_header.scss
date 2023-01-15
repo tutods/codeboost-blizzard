@@ -63,10 +63,48 @@ header {
             }
           }
         }
+
+        @media screen and (max-width: 991px) {
+          @include flex(column);
+
+          font-size: 1.25rem;
+        }
+      }
+
+      .close-icon {
+        display: none;
+
+        @media screen and (max-width: 991px) {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+
+          display: unset;
+
+          color: $white;
+          font-size: 2rem;
+          cursor: pointer;
+
+          z-index: 10;
+        }
       }
 
       @media screen and (max-width: 991px) {
-        display: none;
+        position: fixed;
+        inset: 0;
+
+        @include flex();
+        @include flexAlignment(center, center);
+
+        background-color: $neutral100;
+
+        opacity: 1;
+        transition: opacity .3s;
+
+        &:not(.open) {
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
       }
     }
 
