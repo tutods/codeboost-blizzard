@@ -99,10 +99,11 @@ header {
         background-color: $neutral100;
 
         opacity: 1;
-        transition: opacity .3s;
+        transition: all .3s;
 
         &:not(.open) {
           opacity: 0 !important;
+          right: -100%;
           pointer-events: none !important;
         }
       }
